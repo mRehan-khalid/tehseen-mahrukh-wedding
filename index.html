@@ -11,10 +11,10 @@ html,body{background:#e6dfd0;color:var(--ink);font-family:'Cormorant Garamond',s
 #env{position:fixed;inset:0;z-index:50;cursor:pointer;display:flex;justify-content:center;background:#7f8b55}
 #env .in{position:relative;width:100%;max-width:480px;height:100%;display:flex;overflow:hidden}
 #env .door{flex:1;position:relative;transition:transform 1.7s cubic-bezier(.7,0,.25,1);
- background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='120' viewBox='0 0 90 120'%3E%3Cg fill='none' stroke='%23c8d0a6' stroke-opacity='.45' stroke-width='1.1'%3E%3Cpath d='M45 8c10 14 22 18 22 34s-12 22-22 34c-10-12-22-18-22-34S35 22 45 8z'/%3E%3Cpath d='M45 24c5 8 11 10 11 18s-6 12-11 18c-5-6-11-10-11-18s6-10 11-18z'/%3E%3Cpath d='M45 76v36M33 96c6-2 12 2 12 8M57 96c-6-2-12 2-12 8M0 60c12-6 18-2 22 6M90 60c-12-6-18-2-22 6'/%3E%3Ccircle cx='45' cy='42' r='2.5'/%3E%3C/g%3E%3C/svg%3E"),
- radial-gradient(120% 90% at 50% 40%,#a2ad78 0,#8b9762 55%,#77834e 100%);background-size:90px 120px,cover}
+ background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='110' viewBox='0 0 80 110'%3E%3Cg fill='none' stroke='%23e3e8c8' stroke-opacity='.42' stroke-width='.9'%3E%3Cpath d='M40 6c9 12 20 17 20 32S49 58 40 70C31 58 20 53 20 38S31 18 40 6z'/%3E%3Cpath d='M40 18c5 8 11 11 11 20s-6 13-11 19c-5-6-11-10-11-19s6-12 11-20z'/%3E%3Cpath d='M40 30v16M34 38h12'/%3E%3Cpath d='M40 70v22M40 80c-6-6-14-4-16 2M40 80c6-6 14-4 16 2M40 92c-4 4-4 8 0 12 4-4 4-8 0-12z'/%3E%3Cpath d='M0 52c8-8 14-6 16 2 2 8-6 10-8 4M80 52c-8-8-14-6-16 2-2 8 6 10 8 4'/%3E%3Ccircle cx='40' cy='38' r='1.6' fill='%23e3e8c8' fill-opacity='.4'/%3E%3Ccircle cx='0' cy='0' r='2'/%3E%3Ccircle cx='80' cy='0' r='2'/%3E%3Ccircle cx='0' cy='110' r='2'/%3E%3Ccircle cx='80' cy='110' r='2'/%3E%3C/g%3E%3C/svg%3E"),
+ radial-gradient(120% 90% at 50% 40%,#a3ae7a 0,#8b9762 55%,#74804b 100%);background-size:80px 110px,cover}
 #env .door:after{content:"";position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.18'/%3E%3C/svg%3E");mix-blend-mode:multiply}
-#env .l{box-shadow:inset -12px 0 18px -10px #0005}#env .r{box-shadow:inset 12px 0 18px -10px #0005}
+#env .l{box-shadow:inset -14px 0 20px -10px #0006}#env .r{box-shadow:inset 14px 0 20px -10px #0006}
 #seal{position:absolute;left:50%;top:46%;transform:translate(-50%,-50%);animation:sealp 2s ease-in-out infinite;width:124px;height:124px;z-index:3;transition:opacity .6s,transform .9s;filter:drop-shadow(0 8px 14px #0005)}
 #tap{position:absolute;top:calc(46% + 78px);left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;color:#fffaf0;letter-spacing:3px;font:600 12px 'Playfair Display';z-index:3;text-shadow:0 1px 3px #0005;pointer-events:none;white-space:nowrap}#tap svg{width:34px;height:34px;animation:tapf 1.4s ease-in-out infinite;filter:drop-shadow(0 2px 3px #0004)}#tap span{background:#33402acc;padding:8px 16px;border-radius:20px;border:1px solid #fff6;animation:pulse 1.6s infinite}
 @keyframes sealp{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-50%) scale(1.06)}}@keyframes tapf{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px) scale(.92)}}
@@ -23,16 +23,16 @@ html,body{background:#e6dfd0;color:var(--ink);font-family:'Cormorant Garamond',s
 #env.open #seal{animation:none;opacity:0;transform:translate(-50%,-50%) scale(.7) rotate(-15deg)}#env.open #tap{opacity:0}
 #env.open{background:transparent;transition:background 0s 1.7s}
 /* ===== HERO ===== */
-.hero{position:relative;text-align:center;padding:96px 22px calc(min(100vw,480px)*.44);overflow:hidden;
- background:radial-gradient(90% 50% at 50% 35%,#f8efdc 0,#f1e3c7 60%,#ead8b6 100%)}
+.hero{position:relative;text-align:center;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding-top:64px!important;padding:96px 22px calc(min(100vw,480px)*.44);overflow:hidden;
+ background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .45 0 0 0 0 .36 0 0 0 0 .22 0 0 0 .09 0'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)'/%3E%3C/svg%3E"),linear-gradient(180deg,#f6ecd8 0,#f3e6cc 45%,#efdfc0 100%)}
 .hero svg.top{position:absolute;top:0;left:0;width:100%;z-index:3;pointer-events:none}
 .curt{position:absolute;top:0;bottom:0;width:51%;z-index:4;transition:transform 2.6s cubic-bezier(.6,0,.2,1) .35s;
  background:linear-gradient(90deg,rgba(0,0,0,.0),rgba(0,0,0,.0)),repeating-linear-gradient(90deg,#f3e4c6 0,#fbf1dc 9px,#e4cfa8 19px,#d4bb90 24px,#ecdab8 31px,#f3e4c6 36px);box-shadow:0 0 28px #0003}
 .curt.l{left:0}.curt.r{right:0}
 .curt:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.25),transparent 30%,rgba(120,90,50,.12))}
 .on .curt.l{transform:translateX(-84%) scaleX(.42);transform-origin:left}.on .curt.r{transform:translateX(84%) scaleX(.42);transform-origin:right}
-.drape{position:absolute;top:58px;width:20%;height:58%;z-index:2;opacity:0;transition:opacity 1.2s 1.8s}
-.drape.l{left:0}.drape.r{right:0;transform:scaleX(-1)}
+.drape{position:absolute;top:40px;width:21%;height:calc(100% - 40px - min(100vw,480px)*.30);z-index:2;opacity:0;transition:opacity 1.2s 1.8s}
+.drape.l{left:0}.drape.r{right:0;transform:scaleX(-1)}.drape{filter:drop-shadow(2px 3px 4px rgba(90,65,30,.18))}
 .on .drape{opacity:1}
 .hero .lead{font-size:15px;letter-spacing:.5px;color:#5a4c36}
 .hero .heart{color:var(--dg);font-size:16px;margin:6px 0}
@@ -44,7 +44,7 @@ html,body{background:#e6dfd0;color:var(--ink);font-family:'Cormorant Garamond',s
 /* ===== SECTIONS ===== */
 .sec{text-align:center;padding:46px 26px}
 .sec+.sec{border-top:1px solid #efe8da}
-.divider{margin:10px auto 18px;width:170px;display:flex;align-items:center;gap:10px;color:var(--g);font-size:10px}.divider:before,.divider:after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,#bba98a,transparent)}
+.divider{margin:10px auto 18px;width:190px;display:flex;align-items:center;gap:8px;color:var(--gold);font-size:11px;letter-spacing:6px}.divider:before,.divider:after{content:"";flex:1;height:7px;background:radial-gradient(circle,#b0905c 1.6px,transparent 2px) right center/7px 7px no-repeat,linear-gradient(90deg,transparent,#c2ab80) left center/calc(100% - 9px) 1px no-repeat}.divider:after{transform:scaleX(-1)}
 h3.script{font-size:36px;color:#3a2f1f;line-height:1.1}
 .msg{font-size:18px;font-style:italic;line-height:1.6;color:#4a3f30}
 .scratch{position:relative;width:250px;height:230px;margin:10px auto;transform:scale(.88);transform-origin:top center;margin-bottom:-18px;filter:drop-shadow(0 8px 16px rgba(60,70,40,.25))}
@@ -54,19 +54,19 @@ h3.script{font-size:36px;color:#3a2f1f;line-height:1.1}
 .under small{font-size:14px;color:#8a7f6d;font-style:italic}.under b{font-family:'Playfair Display';font-weight:600;font-size:18px;margin:4px 0;color:#2f2a20}
 .btn{display:inline-flex;gap:8px;align-items:center;background:var(--dg);color:#fff;border:0;border-radius:30px;padding:13px 22px;min-height:46px;font:600 12px 'Playfair Display';letter-spacing:2px;text-decoration:none;margin-top:20px;cursor:pointer;box-shadow:0 6px 16px rgba(51,64,42,.35);animation:glow 2.4s infinite}@keyframes glow{0%,100%{box-shadow:0 6px 16px rgba(51,64,42,.35),0 0 0 0 rgba(95,107,63,.45)}50%{box-shadow:0 6px 16px rgba(51,64,42,.35),0 0 0 8px rgba(95,107,63,0)}}
 .hint{font-size:14px;color:#7a6f5c;font-style:italic;margin-top:8px}
-#scroll{position:fixed;bottom:76px;left:50%;transform:translateX(-50%);z-index:44;display:flex;flex-direction:column;align-items:center;color:#33402a;font:600 11px 'Playfair Display';letter-spacing:2px;background:#faf7f0e6;padding:6px 14px 4px;border-radius:18px;box-shadow:0 3px 10px #0002;transition:opacity .5s}#scroll svg{width:22px;height:22px;animation:bnc 1.3s infinite}@keyframes bnc{50%{transform:translateY(5px)}}#scroll.hide{opacity:0;pointer-events:none}
+#scroll{position:fixed;bottom:max(8px,env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);z-index:44;display:flex;flex-direction:column;align-items:center;color:#33402a;font:600 11px 'Playfair Display';letter-spacing:2px;background:#faf7f0e6;padding:6px 14px 4px;border-radius:18px;box-shadow:0 3px 10px #0002;transition:opacity .5s}#scroll svg{width:22px;height:22px;animation:bnc 1.3s infinite}@keyframes bnc{50%{transform:translateY(5px)}}#scroll.hide{opacity:0;pointer-events:none}
 .swipe{position:absolute;left:50%;top:56%;width:40px;height:40px;margin-left:-20px;z-index:3;pointer-events:none;animation:swp 2s ease-in-out infinite;filter:drop-shadow(0 2px 3px #0005);transition:opacity .4s}@keyframes swp{0%,100%{transform:translate(-40px,0) rotate(-12deg)}50%{transform:translate(40px,-6px) rotate(10deg)}}
 .photo{width:84%;margin:28px auto 0;aspect-ratio:4/3;border-radius:14px;border:6px solid #fff;outline:1px solid #e3d9c6;overflow:hidden;box-shadow:0 10px 28px #0003}
 .photo svg{width:100%;height:100%;display:block}
 .cd{display:flex;justify-content:center;gap:10px}.cd div{width:58px}.cd b{display:block;background:linear-gradient(#f6f3ec,#ebe6da);border:1px solid #dcd4c4;border-radius:10px;padding:11px 0;font:500 21px 'Playfair Display';color:#3a3226;box-shadow:inset 0 1px 0 #fff,0 3px 8px #0001}.cd span{font-size:10px;letter-spacing:1.5px;color:#8a8070;display:block;margin-top:6px}
 .tl{text-align:left;max-width:290px;margin:auto;border-left:1px solid #c9bc9f;padding-left:22px}.tl div{position:relative;margin-bottom:24px}.tl div:before{content:"";position:absolute;left:-27px;top:7px;width:9px;height:9px;border-radius:50%;background:var(--g);box-shadow:0 0 0 3px #faf7f0,0 0 0 4px #c9bc9f}
 .tl b{font-family:'Playfair Display';font-weight:600;font-size:15px}.tl p{font-size:15px;color:#5e5546}
-.ico{width:26px;height:26px;margin:0 auto 4px;color:var(--g)}
+.ico{width:40px;height:40px;padding:9px;margin:0 auto 6px;color:var(--g);border:1px solid #d6cbb3;border-radius:50%;background:radial-gradient(#fff,#f5f0e4);box-shadow:0 2px 6px rgba(80,70,40,.08)}
 .sub2{font-family:'Playfair Display';font-weight:600;font-size:15px;margin-top:18px}
 .sec p{font-size:16px;color:#5a5042}
 form{max-width:320px;margin:auto;text-align:left}form label{font-size:14px;font-weight:600;display:block;margin-top:14px;color:#4a4032}form input,form select,form textarea{width:100%;margin-top:6px;min-height:46px;padding:10px 12px;border:1px solid #d9d0be;border-radius:10px;font:16px 'Cormorant Garamond';background:#fff;outline:none}form input:focus,form textarea:focus,form select:focus{border-color:var(--g)}
 #conf{position:fixed;inset:0;pointer-events:none;z-index:40}
-#mute{position:fixed;bottom:16px;right:16px;z-index:45;background:var(--dg);color:#fff;border:2px solid #fff;height:46px;padding:0 14px 0 12px;border-radius:24px;display:flex;align-items:center;gap:6px;font:600 11px 'Playfair Display';letter-spacing:1px;box-shadow:0 4px 12px #0004}#mute[hidden]{display:none}#mute svg{width:18px;height:18px}
+#mute{position:fixed;top:max(12px,env(safe-area-inset-top));right:12px;z-index:45;background:var(--dg);color:#fff;border:2px solid #fff;height:46px;padding:0 14px 0 12px;border-radius:24px;display:flex;align-items:center;gap:6px;font:600 11px 'Playfair Display';letter-spacing:1px;box-shadow:0 4px 12px #0004}#mute[hidden]{display:none}#mute svg{width:18px;height:18px}
 </style></head><body>
 <svg width="0" height="0" style="position:absolute"><defs>
  <linearGradient id="fab" x1="0" x2="1"><stop offset="0" stop-color="#e2cda5"/><stop offset=".5" stop-color="#fbf1dc"/><stop offset="1" stop-color="#dcc39a"/></linearGradient>
@@ -75,19 +75,22 @@ form{max-width:320px;margin:auto;text-align:left}form label{font-size:14px;font-
  <linearGradient id="water" x1="0" y1="0" y2="1"><stop offset="0" stop-color="#b9d4d2"/><stop offset="1" stop-color="#7fa6a6"/></linearGradient>
  <radialGradient id="rose"><stop offset="0" stop-color="#c98f88"/><stop offset=".55" stop-color="#ecc9c2"/><stop offset="1" stop-color="#f8e7e2"/></radialGradient>
  <radialGradient id="wrose"><stop offset="0" stop-color="#e6d6b8"/><stop offset=".6" stop-color="#fbf5ea"/><stop offset="1" stop-color="#fffdf8"/></radialGradient>
- <g id="r1"><circle r="11" fill="url(#rose)"/><path d="M-6-2c3-5 9-5 11 0M-4 3c3 3 7 3 9-1M-2-6c3-1 5 0 6 3" fill="none" stroke="#b77a72" stroke-width=".9"/></g>
- <g id="r2"><circle r="10" fill="url(#wrose)"/><path d="M-5-2c3-4 8-4 10 0M-3 3c2 3 6 3 8-1" fill="none" stroke="#c9b48e" stroke-width=".8"/></g>
- <g id="lf"><path d="M0 0c6-4 12-3 16 1-6 4-12 3-16-1z" fill="#587a45"/><path d="M0 0h15" stroke="#3e5b31" stroke-width=".5"/></g>
+ <g id="r1"><circle r="11" fill="url(#rose)"/><path d="M-9 1c0-7 6-11 11-9M9-1c0 7-6 11-11 9" fill="none" stroke="#c48a82" stroke-width="1"/><path d="M-5-2c2-4 8-4 9 1-1 4-6 5-8 2" fill="none" stroke="#a96c65" stroke-width=".9"/><circle r="2.2" fill="#b0766f"/></g>
+ <g id="r2"><circle r="10" fill="url(#wrose)"/><path d="M-8 1c0-6 5-10 10-8M8-1c0 6-5 10-10 8" fill="none" stroke="#d2bf98" stroke-width=".9"/><path d="M-4-2c2-3 7-3 8 1-1 3-5 4-7 2" fill="none" stroke="#bfa87c" stroke-width=".8"/><circle r="1.8" fill="#d8c49c"/></g>
+ <g id="lf"><path d="M0 0c6-5 13-4 17 1-6 5-13 4-17-1z" fill="#5b7d47" stroke="#46663a" stroke-width=".4"/><path d="M0 0h15" stroke="#3e5b31" stroke-width=".5"/></g>
  <g id="tree"><path d="M0 0C-7-30-11-70 0-120 11-70 7-30 0 0z" fill="url(#cyp)"/><path d="M0-118v116M0-90l-5-6M0-70l6-7M0-50l-6-7M0-30l6-6" stroke="#1f3a20" stroke-width=".7" opacity=".5"/><rect x="-6" y="0" width="12" height="9" rx="2" fill="#b99f78"/><rect x="-8" y="-1" width="16" height="3" rx="1" fill="#cbb48d"/></g>
 </defs></svg>
 
 <div id="env"><div class="in"><div class="door l"></div><div class="door r"></div>
 <svg id="seal" viewBox="-80 -80 160 160">
- <defs><radialGradient id="sg" cx=".4" cy=".35"><stop offset="0" stop-color="#fbf3e0"/><stop offset=".7" stop-color="#eadcbc"/><stop offset="1" stop-color="#d6c297"/></radialGradient></defs>
- <path id="scal" fill="url(#sg)" stroke="#c4ad80" stroke-width="1.2" d=""/>
- <circle r="50" fill="none" stroke="#b39463" stroke-width="1"/><circle r="45" fill="none" stroke="#b39463" stroke-width=".6" stroke-dasharray="1.5 3"/>
- <g fill="none" stroke="#a68654" stroke-width=".9"><path d="M-30 30c10-4 20-4 30 6 10-10 20-10 30-6"/><path d="M-30-30c10 4 20 4 30-6 10 10 20 10 30 6"/></g>
- <text y="12" text-anchor="middle" font-family="Pinyon Script" font-size="38" fill="#8a6a3a">T&amp;M</text>
+ <defs><radialGradient id="sg" cx=".38" cy=".32" r=".75"><stop offset="0" stop-color="#fdf6e6"/><stop offset=".55" stop-color="#efe2c4"/><stop offset="1" stop-color="#d2bb8c"/></radialGradient><radialGradient id="sg2" cx=".6" cy=".7"><stop offset="0" stop-color="#e8d7b1"/><stop offset="1" stop-color="#f8efdb"/></radialGradient></defs>
+ <path id="scal" fill="url(#sg)" stroke="#bea472" stroke-width="1.2" d=""/>
+ <circle r="54" fill="url(#sg2)" stroke="#b39463" stroke-width="1.2"/><circle r="49" fill="none" stroke="#b39463" stroke-width=".6" stroke-dasharray="1.2 2.6"/><circle r="44" fill="none" stroke="#c9b083" stroke-width=".5"/>
+ <g fill="none" stroke="#a68654" stroke-width=".9" stroke-linecap="round"><path d="M-34 22c8 12 22 18 34 18s26-6 34-18"/>
+ <path d="M-30 28c-4-3-5-8-2-10 3 2 3 6 2 10zM-22 34c-5-1-7-5-5-8 3 1 5 4 5 8zM-12 38c-4 0-7-4-6-7 3 0 5 3 6 7zM30 28c4-3 5-8 2-10-3 2-3 6-2 10zM22 34c5-1 7-5 5-8-3 1-5 4-5 8zM12 38c4 0 7-4 6-7-3 0-5 3-6 7z"/>
+ <path d="M-14-32c6-4 10-4 14 0 4-4 8-4 14 0M-6-36l6-5 6 5"/></g>
+ <circle cx="0" cy="40" r="2" fill="#b39463"/>
+ <text y="11" text-anchor="middle" font-family="Pinyon Script" font-size="36" fill="#7d5f33">T&amp;M</text>
 </svg>
 <div id="tap"><svg viewBox="0 0 24 24" fill="#fffaf0" stroke="#33402a" stroke-width="1.1"><path d="M9 11V4.5a1.5 1.5 0 013 0V10l5.2 1.1a2 2 0 011.6 2.2l-.6 5.2A3 3 0 0115.2 21H11a3 3 0 01-2.4-1.2L5.3 15.5a1.4 1.4 0 012-2L9 15z"/></svg><span>TAP TO OPEN</span></div></div></div>
 <audio id="au" src="music.mp3" loop preload="auto"></audio><button id="mute" hidden aria-label="Music on or off"></button><div id="scroll" class="hide">SCROLL DOWN<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div>
@@ -95,15 +98,33 @@ form{max-width:320px;margin:auto;text-align:left}form label{font-size:14px;font-
 
 <div class="wrap">
 <section class="hero" id="hero">
- <svg class="top" viewBox="0 0 400 90" preserveAspectRatio="none">
-  <rect width="400" height="14" fill="#e3cfa8"/><rect y="12" width="400" height="3" fill="#c9ae80"/>
-  <g id="sw"><path d="M0 15 Q25 62 50 15Z" fill="url(#fab)" stroke="#d2b98e" stroke-width=".8"/><path d="M6 20 Q25 52 44 20" fill="none" stroke="#d6bf96" stroke-width=".8"/><path d="M12 24 Q25 44 38 24" fill="none" stroke="#dcc7a1" stroke-width=".7"/>
-  <g fill="#fffaf0" stroke="#d7c3a0" stroke-width=".4"><circle cx="4" cy="22" r="1.6"/><circle cx="9" cy="31" r="1.6"/><circle cx="15" cy="38" r="1.6"/><circle cx="21" cy="42" r="1.6"/><circle cx="25" cy="43" r="1.6"/><circle cx="29" cy="42" r="1.6"/><circle cx="35" cy="38" r="1.6"/><circle cx="41" cy="31" r="1.6"/><circle cx="46" cy="22" r="1.6"/></g>
-  <path d="M50 15v14" stroke="#c9ae80" stroke-width="1"/><ellipse cx="50" cy="31" rx="2.6" ry="3" fill="#d8c193"/><path d="M47.5 33l-1 9h7l-1-9z" fill="#e2cca2"/></g>
-  <use href="#sw" x="50"/><use href="#sw" x="100"/><use href="#sw" x="150"/><use href="#sw" x="200"/><use href="#sw" x="250"/><use href="#sw" x="300"/><use href="#sw" x="350"/>
+ <svg class="top" viewBox="0 0 400 100" preserveAspectRatio="none">
+  <defs><linearGradient id="val" x1="0" y1="0" y2="1"><stop offset="0" stop-color="#ead6b0"/><stop offset=".6" stop-color="#fbf3e2"/><stop offset="1" stop-color="#e6cfa6"/></linearGradient></defs>
+  <rect width="400" height="12" fill="#dcc398"/><rect y="11" width="400" height="2" fill="#bfa070"/>
+  <g id="sw"><path d="M0 12 Q50 92 100 12Z" fill="url(#val)" stroke="#d3ba8e" stroke-width=".8"/>
+  <path d="M10 18 Q50 78 90 18M20 22 Q50 64 80 22M30 24 Q50 50 70 24" fill="none" stroke="#d8c095" stroke-width=".8"/>
+  <path d="M2 14 Q50 96 98 14" fill="none" stroke="#c4a674" stroke-width="3.6" stroke-dasharray=".1 4.6" stroke-linecap="round" opacity=".5" transform="translate(.4 .7)"/>
+  <path d="M2 14 Q50 96 98 14" fill="none" stroke="#fffbf2" stroke-width="2.8" stroke-dasharray=".1 4.6" stroke-linecap="round"/>
+  <path d="M8 16 Q50 108 92 16" fill="none" stroke="#fffbf2" stroke-width="1.8" stroke-dasharray=".1 3.6" stroke-linecap="round" opacity=".9"/>
+  <circle cx="100" cy="14" r="3.4" fill="#d9bf8d" stroke="#b8975f" stroke-width=".6"/></g>
+  <use href="#sw" x="100"/><use href="#sw" x="200"/><use href="#sw" x="300"/>
  </svg>
- <svg class="drape l" viewBox="0 0 120 420" preserveAspectRatio="none"><path d="M0 0H120C88 60 60 140 46 230 38 290 40 360 52 420H0Z" fill="url(#fab)"/><path d="M20 0C30 120 22 260 30 420M45 0C56 90 40 200 40 300M70 0C68 60 56 120 50 190" stroke="#d1b78c" stroke-width="1.2" fill="none" opacity=".8"/><path d="M40 238c10 6 22 4 30-4" stroke="#b99a66" stroke-width="3" fill="none"/><circle cx="72" cy="232" r="4" fill="#c7a873"/><path d="M70 236l-3 22h10l-3-22z" fill="#d8bd8c"/></svg>
- <svg class="drape r" viewBox="0 0 120 420" preserveAspectRatio="none"><path d="M0 0H120C88 60 60 140 46 230 38 290 40 360 52 420H0Z" fill="url(#fab)"/><path d="M20 0C30 120 22 260 30 420M45 0C56 90 40 200 40 300M70 0C68 60 56 120 50 190" stroke="#d1b78c" stroke-width="1.2" fill="none" opacity=".8"/><path d="M40 238c10 6 22 4 30-4" stroke="#b99a66" stroke-width="3" fill="none"/><circle cx="72" cy="232" r="4" fill="#c7a873"/><path d="M70 236l-3 22h10l-3-22z" fill="#d8bd8c"/></svg>
+ <svg class="drape l" viewBox="0 0 120 600" preserveAspectRatio="none"><defs><linearGradient id="dgl" x1="0" x2="1"><stop offset="0" stop-color="#e3cca2"/><stop offset=".35" stop-color="#fbf2df"/><stop offset=".6" stop-color="#ead6b0"/><stop offset=".85" stop-color="#f8eedb"/><stop offset="1" stop-color="#e0c79c"/></linearGradient></defs>
+<path d="M0 0H118C96 70 70 160 58 250 54 275 56 290 62 300 50 330 42 380 40 440 38 500 26 560 0 600Z" fill="url(#dgl)"/>
+<path d="M14 0C22 100 18 200 24 300 20 400 22 500 12 590M34 0C44 90 36 190 40 290 34 380 34 480 24 570M58 0C62 70 54 150 48 240" stroke="#cdb185" stroke-width="1.1" fill="none" opacity=".7"/>
+<path d="M8 0C14 120 10 220 14 300" stroke="#fff" stroke-width="3" opacity=".35" fill="none"/>
+<path id="pel" d="M118 0C96 70 70 160 58 250 54 275 56 290 62 300 50 330 42 380 40 440 38 500 26 560 0 600" fill="none" stroke="#fffaf0" stroke-width="3.2" stroke-dasharray=".1 5.2" stroke-linecap="round"/>
+<path d="M118 0C96 70 70 160 58 250 54 275 56 290 62 300 50 330 42 380 40 440 38 500 26 560 0 600" fill="none" stroke="#c9ad7e" stroke-width="4.2" stroke-dasharray=".1 5.2" stroke-linecap="round" opacity=".45" transform="translate(.6 .8)"/>
+<path d="M0 292c20 10 46 10 66 2" stroke="#c4a46d" stroke-width="3.5" fill="none" stroke-linecap="round"/><path d="M0 292c20 10 46 10 66 2" stroke="#fffaf0" stroke-width="2.4" stroke-dasharray=".1 4" stroke-linecap="round" fill="none"/>
+<circle cx="66" cy="294" r="5" fill="#d8bb86" stroke="#b8975f" stroke-width=".8"/><path d="M63 298l-4 30h14l-4-30z" fill="#e2c899" stroke="#c0a06a" stroke-width=".6"/><path d="M61 314h10M60 322h12" stroke="#c0a06a" stroke-width=".6"/></svg>
+ <svg class="drape r" viewBox="0 0 120 600" preserveAspectRatio="none"><defs><linearGradient id="dgr" x1="0" x2="1"><stop offset="0" stop-color="#e3cca2"/><stop offset=".35" stop-color="#fbf2df"/><stop offset=".6" stop-color="#ead6b0"/><stop offset=".85" stop-color="#f8eedb"/><stop offset="1" stop-color="#e0c79c"/></linearGradient></defs>
+<path d="M0 0H118C96 70 70 160 58 250 54 275 56 290 62 300 50 330 42 380 40 440 38 500 26 560 0 600Z" fill="url(#dgr)"/>
+<path d="M14 0C22 100 18 200 24 300 20 400 22 500 12 590M34 0C44 90 36 190 40 290 34 380 34 480 24 570M58 0C62 70 54 150 48 240" stroke="#cdb185" stroke-width="1.1" fill="none" opacity=".7"/>
+<path d="M8 0C14 120 10 220 14 300" stroke="#fff" stroke-width="3" opacity=".35" fill="none"/>
+<path id="per" d="M118 0C96 70 70 160 58 250 54 275 56 290 62 300 50 330 42 380 40 440 38 500 26 560 0 600" fill="none" stroke="#fffaf0" stroke-width="3.2" stroke-dasharray=".1 5.2" stroke-linecap="round"/>
+<path d="M118 0C96 70 70 160 58 250 54 275 56 290 62 300 50 330 42 380 40 440 38 500 26 560 0 600" fill="none" stroke="#c9ad7e" stroke-width="4.2" stroke-dasharray=".1 5.2" stroke-linecap="round" opacity=".45" transform="translate(.6 .8)"/>
+<path d="M0 292c20 10 46 10 66 2" stroke="#c4a46d" stroke-width="3.5" fill="none" stroke-linecap="round"/><path d="M0 292c20 10 46 10 66 2" stroke="#fffaf0" stroke-width="2.4" stroke-dasharray=".1 4" stroke-linecap="round" fill="none"/>
+<circle cx="66" cy="294" r="5" fill="#d8bb86" stroke="#b8975f" stroke-width=".8"/><path d="M63 298l-4 30h14l-4-30z" fill="#e2c899" stroke="#c0a06a" stroke-width=".6"/><path d="M61 314h10M60 322h12" stroke="#c0a06a" stroke-width=".6"/></svg>
  <div class="curt l"></div><div class="curt r"></div>
  <p class="lead fade">We're getting married</p><div class="heart fade">♥</div><div class="divider fade">♥</div>
  <h2 class="script fade">Engr. Muhammad Tehseen</h2>
@@ -112,22 +133,35 @@ form{max-width:320px;margin:auto;text-align:left}form label{font-size:14px;font-
  <h2 class="script fade">Dr. Mahrukh Ejaz</h2>
  <p class="sub fade"><i>Doctor of Physical Therapy (MS)</i><br>Daughter of Mr. &amp; Mrs. Ejaz Ahmed</p>
  <svg class="garden" viewBox="0 0 400 260">
-  <path d="M0 260V170c60-16 120-10 200-12s140 2 200 12v90z" fill="#e5d6b9"/>
-  <path d="M0 200c80-12 320-12 400 0v60H0z" fill="#d8c6a3" opacity=".6"/>
-  <use href="#tree" x="22" y="236" transform="scale(1)"/><use href="#tree" x="52" y="244" transform="translate(52 244) scale(.75) translate(-52 -244)"/>
-  <use href="#tree" x="378" y="236"/><use href="#tree" x="348" y="244" transform="translate(348 244) scale(.75) translate(-348 -244)"/>
+  <defs><linearGradient id="gnd" x1="0" y1="0" y2="1"><stop offset="0" stop-color="#efdfc0" stop-opacity="0"/><stop offset=".35" stop-color="#e8d6b4"/><stop offset="1" stop-color="#dcc6a0"/></linearGradient>
+  <g id="bal"><rect x="-3" y="0" width="6" height="2" fill="#e9dcc2"/><path d="M-2 2c-3 4-3 8 0 10-3 2-3 6 0 8h4c3-2 3-6 0-8 3-2 3-6 0-10z" fill="url(#stone)" stroke="#bfa982" stroke-width=".4"/></g>
+  <g id="urn"><path d="M-9-2h18l-3 9H-6z" fill="url(#stone)" stroke="#b9a37a" stroke-width=".5"/><path d="M-4 7h8l1 4H-5z" fill="#d9c9a8"/><use href="#lf" x="-16" y="-4" transform="rotate(-25 -16 -4)"/><use href="#lf" x="2" y="-6" transform="rotate(-15 2 -6)"/><use href="#r1" x="-4" y="-6" transform="translate(-4 -6) scale(.55) translate(4 6)"/><use href="#r2" x="5" y="-8" transform="translate(5 -8) scale(.5) translate(-5 8)"/><use href="#r2" x="-8" y="-9" transform="translate(-8 -9) scale(.45) translate(8 9)"/></g>
+  <g id="pil"><rect x="-7" y="-34" width="14" height="40" fill="url(#stone)" stroke="#bda97f" stroke-width=".6"/><rect x="-9" y="-37" width="18" height="4" rx="1" fill="#efe4cf" stroke="#bda97f" stroke-width=".5"/><rect x="-9" y="4" width="18" height="4" fill="#d6c4a0"/><use href="#urn" y="-39"/></g></defs>
+  <rect y="90" width="400" height="170" fill="url(#gnd)"/>
+  <!-- balustrade -->
+  <g transform="translate(0 168)"><rect x="0" y="-26" width="400" height="4" fill="#efe5d0" stroke="#c8b48c" stroke-width=".5"/><rect x="0" y="-2" width="400" height="5" fill="#dccaa6"/>
+  <g transform="translate(0 -22)"><use href="#bal" x="96"/><use href="#bal" x="106"/><use href="#bal" x="116"/><use href="#bal" x="126"/><use href="#bal" x="274"/><use href="#bal" x="284"/><use href="#bal" x="294"/><use href="#bal" x="304"/></g>
+  <use href="#pil" x="86" y="0"/><use href="#pil" x="314" y="0"/></g>
+  <use href="#tree" x="30" y="232"/><use href="#tree" x="58" y="226" transform="translate(58 226) scale(.72) translate(-58 -226)"/><use href="#tree" x="370" y="232"/><use href="#tree" x="342" y="226" transform="translate(342 226) scale(.72) translate(-342 -226)"/>
+  <use href="#tree" x="148" y="168" transform="translate(148 168) scale(.42) translate(-148 -168)"/><use href="#tree" x="252" y="168" transform="translate(252 168) scale(.42) translate(-252 -168)"/>
   <!-- fountain -->
-  <ellipse cx="200" cy="232" rx="150" ry="20" fill="#000" opacity=".08"/><ellipse cx="200" cy="222" rx="128" ry="26" fill="#c3b08c"/><ellipse cx="200" cy="216" rx="124" ry="24" fill="url(#stone)" stroke="#bda97f"/>
-  <ellipse cx="200" cy="214" rx="108" ry="17" fill="url(#water)"/>
-  <g stroke="#e9f3f1" stroke-width="1" fill="none" opacity=".7"><ellipse cx="200" cy="214" rx="60" ry="8"/><ellipse cx="200" cy="214" rx="85" ry="12"/></g>
-  <path d="M188 214l4-52h16l4 52z" fill="url(#stone)" stroke="#bda97f" stroke-width=".8"/>
-  <ellipse cx="200" cy="163" rx="34" ry="8" fill="url(#stone)" stroke="#bda97f"/><ellipse cx="200" cy="161" rx="28" ry="5" fill="url(#water)"/>
-  <path d="M196 160l2-22h4l2 22z" fill="url(#stone)"/><ellipse cx="200" cy="137" rx="13" ry="4" fill="url(#stone)" stroke="#bda97f"/><circle cx="200" cy="131" r="4" fill="#ede3cf" stroke="#bda97f" stroke-width=".6"/>
-  <g stroke="#d9eceb" stroke-width="1.2" fill="none" opacity=".85"><path d="M200 128c-8-10-22-6-26 30"/><path d="M200 128c8-10 22-6 26 30"/><path d="M172 162c-14 6-22 20-26 48"/><path d="M228 162c14 6 22 20 26 48"/></g>
+  <ellipse cx="200" cy="230" rx="140" ry="18" fill="#6b5a3c" opacity=".12"/>
+  <ellipse cx="200" cy="222" rx="124" ry="25" fill="#bba680"/><ellipse cx="200" cy="216" rx="122" ry="23" fill="url(#stone)" stroke="#b9a479" stroke-width=".8"/>
+  <path d="M80 216a120 22 0 0 0 240 0" fill="none" stroke="#fffaf0" stroke-width="1" opacity=".6"/>
+  <ellipse cx="200" cy="214" rx="106" ry="16" fill="url(#water)"/><ellipse cx="200" cy="210" rx="96" ry="9" fill="#d8ecea" opacity=".35"/>
+  <g stroke="#eef7f5" stroke-width=".8" fill="none" opacity=".75"><ellipse cx="200" cy="215" rx="40" ry="5"/><ellipse cx="200" cy="215" rx="66" ry="9"/><ellipse cx="200" cy="215" rx="88" ry="12" stroke-dasharray="6 5"/></g>
+  <path d="M190 215l3-50h14l3 50z" fill="url(#stone)" stroke="#bda97f" stroke-width=".7"/><path d="M188 192h24M189 178h22" stroke="#c8b48c" stroke-width=".7"/>
+  <ellipse cx="200" cy="166" rx="36" ry="8" fill="url(#stone)" stroke="#bda97f" stroke-width=".7"/><ellipse cx="200" cy="164" rx="30" ry="5" fill="url(#water)"/>
+  <path d="M196 163l2-22h4l2 22z" fill="url(#stone)"/><ellipse cx="200" cy="141" rx="14" ry="4" fill="url(#stone)" stroke="#bda97f" stroke-width=".6"/><path d="M196 139c0-6 8-6 8 0" fill="#ede3cf" stroke="#bda97f" stroke-width=".5"/><circle cx="200" cy="131" r="2.2" fill="#ede3cf" stroke="#bda97f" stroke-width=".5"/>
+  <g stroke="#e4f2f1" stroke-width="1.1" fill="none" opacity=".9" stroke-linecap="round"><path d="M200 130c-8-10-20-6-24 30"/><path d="M200 130c8-10 20-6 24 30"/><path d="M200 130c-3-8-9-6-12 30" opacity=".6"/><path d="M200 130c3-8 9-6 12 30" opacity=".6"/><path d="M170 165c-14 6-22 20-26 46"/><path d="M230 165c14 6 22 20 26 46"/></g>
+  <g fill="#f4fbfa" opacity=".8"><circle cx="176" cy="158" r=".9"/><circle cx="224" cy="157" r=".9"/><circle cx="146" cy="206" r="1"/><circle cx="254" cy="207" r="1"/></g>
   <!-- rose bushes -->
-  <g transform="translate(78 222)"><ellipse rx="40" ry="18" fill="#4d6c3d"/><use href="#lf" x="-34" y="-6" transform="rotate(-20 -34 -6)"/><use href="#lf" x="18" y="-12"/><use href="#lf" x="-10" y="6"/><use href="#r1" x="-18" y="-6"/><use href="#r2" x="4" y="-12"/><use href="#r1" x="22" y="0" transform="translate(22 0) scale(.8) translate(-22 0)"/><use href="#r2" x="-30" y="6"/></g>
-  <g transform="translate(322 222) scale(-1 1)"><ellipse rx="40" ry="18" fill="#4d6c3d"/><use href="#lf" x="-34" y="-6"/><use href="#lf" x="18" y="-12"/><use href="#r1" x="-18" y="-6"/><use href="#r2" x="4" y="-12"/><use href="#r1" x="22" y="0"/><use href="#r2" x="-30" y="6"/></g>
-  <g transform="translate(200 250)"><ellipse rx="70" ry="12" fill="#5a7a47"/><use href="#r2" x="-40" y="-4"/><use href="#r1" x="-14" y="-6"/><use href="#r2" x="14" y="-4"/><use href="#r1" x="42" y="-2"/><use href="#lf" x="-60" y="-4"/><use href="#lf" x="50" y="-8"/></g>
+  <defs>  <g id="bush"><ellipse rx="44" ry="19" fill="#4a6a3a"/><ellipse cx="-8" cy="-8" rx="30" ry="12" fill="#5a7c46"/>
+   <use href="#lf" x="-42" y="-4" transform="rotate(-25 -42 -4)"/><use href="#lf" x="24" y="-14" transform="rotate(-10 24 -14)"/><use href="#lf" x="-14" y="8" transform="rotate(15 -14 8)"/><use href="#lf" x="30" y="4" transform="rotate(20 30 4)"/><use href="#lf" x="-30" y="-16" transform="rotate(-40 -30 -16)"/>
+   <use href="#r1" x="-20" y="-8"/><use href="#r2" x="2" y="-14"/><use href="#r1" x="24" y="-2" transform="translate(24 -2) scale(.85) translate(-24 2)"/><use href="#r2" x="-34" y="4" transform="translate(-34 4) scale(.9) translate(34 -4)"/><use href="#r2" x="10" y="6" transform="translate(10 6) scale(.8) translate(-10 -6)"/><use href="#r1" x="-6" y="4" transform="translate(-6 4) scale(.7) translate(6 -4)"/>
+   <g fill="#f3e2d6"><circle cx="-26" cy="-18" r="2"/><circle cx="16" cy="-22" r="2"/><circle cx="36" cy="-8" r="1.6"/></g></g></defs>
+  <use href="#bush" x="74" y="226"/><g transform="translate(326 226) scale(-1 1)"><use href="#bush"/></g>
+  <g transform="translate(200 252) scale(1.5 .9)"><use href="#bush"/></g>
  </svg>
 </section>
 
@@ -147,37 +181,37 @@ form{max-width:320px;margin:auto;text-align:left}form label{font-size:14px;font-
 <section class="sec"><h3 class="script fade">Counting Down to Forever</h3><div class="divider">♥</div>
  <div class="cd"><div><b id="d">0</b><span>DAYS</span></div><div><b id="h">0</b><span>HOURS</span></div><div><b id="m">0</b><span>MINUTES</span></div><div><b id="s">0</b><span>SECONDS</span></div></div></section>
 
-<section class="sec"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><h3 class="script fade">Program Timeline</h3><div class="divider">♥</div>
+<section class="sec"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><h3 class="script fade">Program Timeline</h3><div class="divider">♥</div>
  <div class="tl fade"><div><b>Nikkah</b><p>Tuesday, Dec 1, 2026</p></div><div><b>Mayun</b><p>Thursday, Dec 3, 2026</p></div><div><b>Walima</b><p>Saturday, Dec 5, 2026<br>Your presence means a lot! ♥</p></div></div></section>
 
-<section class="sec"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-6.5-7-12a7 7 0 0114 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg><h3 class="script fade">Venue</h3><div class="divider">♥</div>
+<section class="sec"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.5-7-12a7 7 0 0114 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg><h3 class="script fade">Venue</h3><div class="divider">♥</div>
  <p class="msg fade" style="font-size:20px">Venue details to follow</p></section>
 
-<section class="sec"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 3h6l-1 4h-4zM7 7h10l2 14H5z"/></svg><h3 class="script fade">Dress Code</h3><div class="divider">♥</div>
+<section class="sec"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3c0 2 1.5 3 3 3s3-1 3-3M9 3L5 6l1.5 3L8 8v13h8V8l1.5 1L19 6l-4-3"/></svg><h3 class="script fade">Dress Code</h3><div class="divider">♥</div>
  <div class="sub2">Women</div><p>Elegant formal attire in pastel or jewel tones</p><div class="sub2">Men</div><p>Suit or traditional formal wear</p></section>
 
-<section class="sec"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3c2 3 5 4 5 8a5 5 0 01-10 0c0-4 3-5 5-8z"/><path d="M12 16v5"/></svg><h3 class="script fade">Pre-Wedding Events</h3><div class="divider">♥</div>
+<section class="sec"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.5-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.5-7 10-7 10z"/><path d="M9 10.5c.5-1 1.5-1.5 2.5-1.5"/></svg><h3 class="script fade">Pre-Wedding Events</h3><div class="divider">♥</div>
  <div class="sub2">Nikkah</div><p>Tuesday, Dec 1, 2026</p><div class="sub2">Mayun</div><p>Thursday, Dec 3, 2026</p></section>
 
-<section class="sec"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="8" width="18" height="13" rx="1"/><path d="M2 8h20M12 8v13M12 8c-2-4-7-4-6-1s6 1 6 1c2-4 7-4 6-1s-6 1-6 1"/></svg><h3 class="script fade">Gifts</h3><div class="divider">♥</div>
+<section class="sec"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="13" rx="1"/><path d="M2 8h20M12 8v13M12 8c-2-4-7-4-6-1s6 1 6 1c2-4 7-4 6-1s-6 1-6 1"/></svg><h3 class="script fade">Gifts</h3><div class="divider">♥</div>
  <p class="msg" style="font-size:19px">Your love, blessings and presence are the greatest gift we could wish for.</p></section>
 
-<section class="sec"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><h3 class="script fade">RSVP</h3><div class="divider">♥</div>
+<section class="sec"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><h3 class="script fade">RSVP</h3><div class="divider">♥</div>
  <form id="rsvp"><label>Your Name<input name="name" required placeholder="Type your full name"></label><label>Email (optional)<input name="email" type="email" placeholder="you@example.com"></label><label>Will you be attending?<select name="attending"><option>Yes, I will be there</option><option>Sorry, can't make it</option></select></label><label>Number of people<select name="people" required><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option></select></label><button class="btn" style="width:100%;justify-content:center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/></svg>SEND RSVP</button></form></section>
 <p class="sec script" style="font-size:32px;padding-top:10px;padding-bottom:80px">Tehseen &amp; Mahrukh</p>
 </div>
 <script>
 // scalloped seal path
-(()=>{let d='',n=16;for(let i=0;i<n;i++){const a0=i/n*2*Math.PI,a1=(i+.5)/n*2*Math.PI,a2=(i+1)/n*2*Math.PI,R=62,r=72;
+(()=>{let d='',n=16;for(let i=0;i<n;i++){const a0=i/n*2*Math.PI,a1=(i+.5)/n*2*Math.PI,a2=(i+1)/n*2*Math.PI,R=64,r=72;
  const p=(a,R)=>[(Math.cos(a)*R).toFixed(2),(Math.sin(a)*R).toFixed(2)];const [x0,y0]=p(a0,R),[cx,cy]=p(a1,r*1.08),[x2,y2]=p(a2,R);d+=(i?'':'M'+x0+' '+y0)+' Q'+cx+' '+cy+' '+x2+' '+y2}document.getElementById('scal').setAttribute('d',d+'Z')})();
 const env=document.getElementById('env'),au=document.getElementById('au'),mu=document.getElementById('mute');
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.2});
 function reveal(){let i=0;document.querySelectorAll('.fade').forEach(el=>{if(el.closest('.hero'))el.style.transitionDelay=(1.6+(i++)*.22)+'s';io.observe(el)})}
-env.onclick=()=>{env.classList.add('open');au.play().catch(()=>{});mu.hidden=false;setTimeout(()=>{document.getElementById('hero').classList.add('on');reveal()},400);setTimeout(()=>env.remove(),1900);setTimeout(showScroll,3200)};
+env.onclick=()=>{env.classList.add('open');au.play().catch(()=>{});mu.hidden=false;setTimeout(()=>{document.getElementById('hero').classList.add('on');reveal()},400);setTimeout(()=>env.remove(),1900);setTimeout(showScroll,5200)};
 if(location.hash=='#open'){env.remove();document.getElementById('hero').classList.add('on');reveal()}
 const ON='<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4zM15.5 8.5a5 5 0 010 7M19 5a10 10 0 010 14"/></svg>MUSIC ON',OFF='<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4zM23 9l-6 6M17 9l6 6"/></svg>MUSIC OFF';mu.innerHTML=ON;
 mu.onclick=()=>{au.paused?au.play():au.pause();mu.innerHTML=au.paused?OFF:ON};
-const sc=document.getElementById('scroll');function showScroll(){sc.classList.remove('hide')}addEventListener('scroll',()=>{if(scrollY>120)sc.classList.add('hide')},{passive:true});
+const sc=document.getElementById('scroll');function showScroll(){sc.classList.remove('hide')}addEventListener('scroll',()=>{if(scrollY>60)sc.classList.add('hide')},{passive:true});
 const c=document.getElementById('sc'),x=c.getContext('2d'),W=500,H=460;
 let g=x.createRadialGradient(250,180,20,250,220,340);g.addColorStop(0,'#c9d1b4');g.addColorStop(.6,'#8f9a72');g.addColorStop(1,'#606d48');x.fillStyle=g;x.fillRect(0,0,W,H);
 for(let i=0;i<2600;i++){x.fillStyle='rgba(255,255,240,'+Math.random()*.6+')';const s=Math.random()*2.4;x.fillRect(Math.random()*W,Math.random()*H,s,s)}
