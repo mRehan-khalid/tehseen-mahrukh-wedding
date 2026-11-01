@@ -1,0 +1,121 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Tehseen & Mahrukh — Wedding Invitation</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+<style>
+:root{--g:#5f6b3f;--dg:#2f3b25;--cream:#f4ecdc;--paper:#faf7f0;--ink:#3b3428;--gold:#b89a6a}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#e9e3d6;color:var(--ink);font-family:'Cormorant Garamond',serif;overflow-x:hidden}
+.wrap{max-width:480px;margin:0 auto;background:var(--paper);min-height:100vh;position:relative;overflow:hidden}
+.script{font-family:'Great Vibes',cursive;font-weight:400}
+/* envelope */
+#env{position:fixed;inset:0;z-index:50;display:flex;cursor:pointer}
+#env .door{flex:1;background:#8e9a63 radial-gradient(circle at 30% 30%,#a3ae78 0,#7f8b55 70%);position:relative;transition:transform 1.6s cubic-bezier(.7,0,.3,1)}
+#env .door:before{content:"";position:absolute;inset:0;opacity:.35;background:repeating-radial-gradient(circle at 50% 50%,transparent 0 18px,rgba(255,255,255,.25) 19px 20px)}
+#env .l{border-right:1px solid #6d7748}#env .r{border-left:1px solid #6d7748}
+#seal{position:absolute;left:50%;top:45%;transform:translate(-50%,-50%);width:130px;height:130px;z-index:2;transition:opacity .6s,transform .8s;
+ background:#e8dcc0;clip-path:polygon(50% 0,61% 8%,75% 4%,80% 18%,95% 20%,92% 35%,100% 50%,92% 65%,95% 80%,80% 82%,75% 96%,61% 92%,50% 100%,39% 92%,25% 96%,20% 82%,5% 80%,8% 65%,0 50%,8% 35%,5% 20%,20% 18%,25% 4%,39% 8%);display:flex;align-items:center;justify-content:center;flex-direction:column;color:#7a6440;box-shadow:0 4px 20px #0004}
+#seal b{font-family:'Great Vibes';font-size:40px;font-weight:400}#seal small{font-size:11px;letter-spacing:2px}
+#tap{position:absolute;bottom:12%;width:100%;text-align:center;color:#f4ecdc;letter-spacing:3px;font-size:14px;z-index:2;animation:pulse 1.6s infinite}
+@keyframes pulse{50%{opacity:.4}}
+#env.open .l{transform:translateX(-101%)}#env.open .r{transform:translateX(101%)}#env.open #seal,#env.open #tap{opacity:0;transform:translate(-50%,-50%) scale(.6)}
+/* hero with curtains */
+.hero{position:relative;min-height:100vh;background:linear-gradient(#f3e6cf,#efe0c4);text-align:center;padding:110px 20px 260px;overflow:hidden}
+.valance{position:absolute;top:0;left:0;right:0;height:70px;background:repeating-radial-gradient(ellipse at 50% -10px,#ead7b6 0 40px,#d9c19a 41px 44px,transparent 45px);background-size:70px 70px;z-index:3;border-top:10px solid #e3cfa9}
+.curt{position:absolute;top:0;bottom:0;width:52%;z-index:4;background:repeating-linear-gradient(90deg,#efdcbc 0 14px,#d8bf95 22px,#efdcbc 30px);transition:transform 2.4s cubic-bezier(.6,0,.2,1) .3s;box-shadow:0 0 30px #0002}
+.curt.l{left:0;transform-origin:left top}.curt.r{right:0;transform-origin:right top}
+.on .curt.l{transform:translateX(-80%) skewY(4deg) scaleX(.45)}.on .curt.r{transform:translateX(80%) skewY(-4deg) scaleX(.45)}
+.hero .heart{color:var(--dg);font-size:18px}
+.hero h2{font-size:58px;color:#3a3020;line-height:1}.hero .amp{font-family:'Great Vibes';font-size:36px;color:var(--gold)}
+.hero p{font-size:15px;line-height:1.35}
+.garden{position:absolute;bottom:0;left:0;right:0;height:240px}
+.fade{opacity:0;transform:translateY(24px);transition:1s ease}.fade.in{opacity:1;transform:none}
+.sec{text-align:center;padding:60px 26px}
+.divider{margin:12px auto 18px;width:150px;display:flex;align-items:center;gap:8px;color:var(--g);font-size:10px}.divider:before,.divider:after{content:"";flex:1;height:1px;background:#bfb39b}
+h3.script{font-size:44px;color:#3a3020}
+.msg{font-size:21px;font-style:italic;line-height:1.55}
+/* scratch */
+.scratch{position:relative;width:250px;height:230px;margin:10px auto}
+.scratch .under,.scratch canvas{position:absolute;inset:0;width:100%;height:100%}
+.heartshape{clip-path:path('M125 225 C 30 160 0 110 0 65 C 0 25 30 0 65 0 C 95 0 115 18 125 40 C 135 18 155 0 185 0 C 220 0 250 25 250 65 C 250 110 220 160 125 225 Z')}
+.under{background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;padding-bottom:30px;border:1px solid #ddd}
+.under small{font-size:13px;color:#888}.under b{font-family:'Playfair Display';font-size:19px}
+.btn{display:inline-flex;gap:8px;align-items:center;background:var(--dg);color:#fff;border:0;border-radius:30px;padding:11px 22px;font:600 12px 'Playfair Display';letter-spacing:2px;text-decoration:none;margin-top:18px;cursor:pointer}
+.photo{width:86%;margin:30px auto 0;aspect-ratio:4/3;border-radius:14px;background:radial-gradient(circle at 60% 55%,#fff8ee 0 12%,#e8cfb0 30%,#c9a585 70%);box-shadow:0 8px 25px #0002;position:relative;overflow:hidden}
+.photo:after{content:"✿ ❀ ✿";position:absolute;left:0;right:0;top:42%;text-align:center;font-size:42px;color:#fffaf2;letter-spacing:6px}
+.cd{display:flex;justify-content:center;gap:10px}.cd div{width:62px}.cd b{display:block;background:#efece4;border:1px solid #ddd6c8;border-radius:8px;padding:12px 0;font-size:24px}.cd span{font-size:10px;letter-spacing:1px;color:#888}
+.tl{text-align:left;max-width:300px;margin:auto;border-left:1px solid #bfb39b;padding-left:20px}.tl div{position:relative;margin-bottom:22px}.tl div:before{content:"";position:absolute;left:-25px;top:6px;width:9px;height:9px;border-radius:50%;background:var(--g)}
+.tl b{font-family:'Playfair Display';font-size:16px}.tl p{font-size:15px;color:#555}
+.ico{font-size:22px;color:var(--g)}
+iframe{width:100%;height:220px;border:0;border-radius:10px;margin-top:14px}
+.sub{font-family:'Playfair Display';font-size:16px;margin-top:16px}
+form{max-width:320px;margin:auto;text-align:left}form label{font-size:14px;display:block;margin-top:12px}form input,form select,form textarea{width:100%;padding:10px;border:1px solid #d8d0c0;border-radius:8px;font:inherit;background:#fff}
+#conf{position:fixed;inset:0;pointer-events:none;z-index:40}
+#mute{position:fixed;bottom:16px;right:16px;z-index:45;background:var(--dg);color:#fff;border:0;width:42px;height:42px;border-radius:50%;font-size:18px}
+</style></head><body>
+<div id="env"><div class="door l"></div><div class="door r"></div>
+<div id="seal"><b>T&amp;M</b><small>OPEN</small></div><div id="tap">TAP TO OPEN</div></div>
+<audio id="au" src="music.mp3" loop preload="auto"></audio><button id="mute" hidden>♪</button>
+<canvas id="conf"></canvas>
+<div class="wrap">
+<section class="hero" id="hero">
+ <div class="valance"></div><div class="curt l"></div><div class="curt r"></div>
+ <p class="fade">We're getting married</p><div class="heart">♥</div><div class="divider">♥</div>
+ <h2 class="script fade">Tehseen</h2>
+ <p class="fade">Son of Mr. &amp; Mrs. Khalid Mehmood<br>Electrical Engineer (Masters)</p>
+ <div class="amp fade">&amp;</div>
+ <h2 class="script fade">Mahrukh</h2>
+ <p class="fade">Daughter of Mr. &amp; Mrs. Ejaz Ahmed<br>MS DPT</p>
+ <svg class="garden" viewBox="0 0 400 240" preserveAspectRatio="xMidYMax slice">
+  <g fill="#3f5a33"><path d="M10 240 L30 80 L50 240Z"/><path d="M350 240 L372 70 L394 240Z"/><path d="M45 240 L60 130 L75 240Z"/><path d="M325 240 L340 120 L355 240Z"/></g>
+  <ellipse cx="200" cy="200" rx="120" ry="30" fill="#d9ccb2"/><ellipse cx="200" cy="196" rx="100" ry="22" fill="#8fb3b5"/>
+  <rect x="192" y="140" width="16" height="58" fill="#e7dcc5"/><ellipse cx="200" cy="140" rx="30" ry="8" fill="#e7dcc5"/><ellipse cx="200" cy="138" rx="24" ry="5" fill="#9fc2c4"/>
+  <g fill="#f3e2df"><circle cx="70" cy="190" r="12"/><circle cx="95" cy="205" r="9"/><circle cx="320" cy="195" r="12"/><circle cx="300" cy="210" r="9"/></g>
+  <g fill="#d9a7a0"><circle cx="70" cy="190" r="5"/><circle cx="320" cy="195" r="5"/></g>
+  <g fill="#5c7a48"><ellipse cx="110" cy="222" rx="30" ry="12"/><ellipse cx="290" cy="225" rx="30" ry="12"/></g>
+ </svg>
+</section>
+<section class="sec"><div class="divider">♥</div>
+ <p class="msg fade">We are honored to welcome you to the Wedding ceremony of Tehseen &amp; Mahrukh As they begin their journey together in faith and love, we thank you for being part of this blessed occasion ♥</p><div class="divider">♥</div></section>
+<section class="sec"><h3 class="script fade">Scratch to Reveal</h3><div class="divider">♥</div>
+ <div class="scratch"><div class="under heartshape"><small>Save the date</small><b>November 30, 2026</b><small>Monday</small><small>10:30 AM</small></div><canvas id="sc" class="heartshape" width="250" height="230"></canvas></div>
+ <a class="btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Tehseen+%26+Mahrukh+Wedding&dates=20261130T103000/20261130T160000&location=Grand+Palace+Hall,+City+centre,+London" target="_blank">📅 SAVE THE DATE</a>
+ <div class="photo fade"></div></section>
+<section class="sec"><h3 class="script fade">Counting Down to Forever</h3><div class="divider">♥</div>
+ <div class="cd"><div><b id="d">0</b><span>DAYS</span></div><div><b id="h">0</b><span>HOURS</span></div><div><b id="m">0</b><span>MINUTES</span></div><div><b id="s">0</b><span>SECONDS</span></div></div></section>
+<section class="sec"><div class="ico">◷</div><h3 class="script fade">Program Timeline</h3><div class="divider">♥</div>
+ <div class="tl fade"><div><b>Guest Arrival</b><p>Nov 30, 2026, 10:00 AM<br>We welcome you ♥</p></div><div><b>Wedding Ceremony</b><p>Nov 30, 2026, 10:30 AM<br>Your presence means a lot!</p></div><div><b>Reception</b><p>Dec 2, 2026, 7:30 PM</p></div></div></section>
+<section class="sec"><div class="ico">⌖</div><h3 class="script fade">Venue</h3><div class="divider">♥</div>
+ <div class="sub">Grand Palace Hall</div><p>City centre, London</p>
+ <iframe loading="lazy" src="https://maps.google.com/maps?q=London%20city%20centre&z=14&output=embed"></iframe>
+ <a class="btn" href="https://maps.google.com/?q=City+centre+London" target="_blank">View on Google Maps</a></section>
+<section class="sec"><div class="ico">👔</div><h3 class="script fade">Dress Code</h3><div class="divider">♥</div>
+ <div class="sub">Women</div><p>Elegant formal attire in pastel or jewel tones</p><div class="sub">Men</div><p>Suit or traditional formal wear</p></section>
+<section class="sec"><div class="ico">✿</div><h3 class="script fade">Pre-Wedding Events</h3><div class="divider">♥</div>
+ <div class="sub">Mahendi</div><p>Nov 28, 2026, 8:30 PM<br>At Bride's House</p><div class="sub">Haldi</div><p>Nov 29, 2026, 8:00 PM<br>At Groom's House</p></section>
+<section class="sec"><div class="ico">🚗</div><h3 class="script fade">Transportation</h3><div class="divider">♥</div>
+ <p class="msg" style="font-size:18px">Shuttle service will be available from the city center to the venue. Pickup point: Central Station at 3:30 PM</p></section>
+<section class="sec"><div class="ico">🏨</div><h3 class="script fade">Accommodation</h3><div class="divider">♥</div>
+ <p class="msg" style="font-size:18px">Special rate at The Grand Palace Hotel (2 min from venue). Use code TEHSEENMAHRUKH2026 when booking.</p></section>
+<section class="sec"><div class="ico">🎁</div><h3 class="script fade">Gifts</h3><div class="divider">♥</div>
+ <p class="msg" style="font-size:18px">Your love, blessings and presence are the greatest gift we could wish for.</p></section>
+<section class="sec"><div class="ico">✉</div><h3 class="script fade">RSVP</h3><div class="divider">♥</div>
+ <form onsubmit="event.preventDefault();this.innerHTML='<p class=msg>Thank you! ♥</p>'"><label>Your Name<input required></label><label>Email<input type="email"></label><label>Will you be attending?<select><option>Yes, I will be there</option><option>Sorry, can't make it</option></select></label><label>Your Message<textarea rows="3"></textarea></label><button class="btn">SEND RSVP</button></form></section>
+<p class="sec script" style="font-size:34px;padding-top:0">Tehseen &amp; Mahrukh</p>
+</div>
+<script>
+const env=document.getElementById('env'),au=document.getElementById('au'),mu=document.getElementById('mute');
+env.onclick=()=>{env.classList.add('open');au.play().catch(()=>{});mu.hidden=false;setTimeout(()=>{document.getElementById('hero').classList.add('on');reveal()},500);setTimeout(()=>env.remove(),1800)};
+mu.onclick=()=>{au.paused?au.play():au.pause();mu.textContent=au.paused?'✕':'♪'};
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.2});
+function reveal(){document.querySelectorAll('.fade').forEach((el,i)=>{el.style.transitionDelay=(el.closest('.hero')?1.4+i*.25:0)+'s';io.observe(el)})}
+// scratch
+const c=document.getElementById('sc'),x=c.getContext('2d');let g=x.createRadialGradient(125,90,10,125,110,170);g.addColorStop(0,'#c5cdb3');g.addColorStop(1,'#6f7c58');x.fillStyle=g;x.fillRect(0,0,250,230);
+for(let i=0;i<900;i++){x.fillStyle='rgba(255,255,255,'+Math.random()*.5+')';x.fillRect(Math.random()*250,Math.random()*230,1.5,1.5)}
+x.fillStyle='#fff';x.font='italic 15px Cormorant Garamond';x.textAlign='center';x.fillText('scratch here',125,105);
+let down=false,done=false;function sp(e){const r=c.getBoundingClientRect(),t=e.touches?e.touches[0]:e;x.globalCompositeOperation='destination-out';x.beginPath();x.arc((t.clientX-r.left)*250/r.width,(t.clientY-r.top)*230/r.height,22,0,7);x.fill();check()}
+function check(){if(done)return;const d=x.getImageData(0,0,250,230).data;let n=0;for(let i=3;i<d.length;i+=40)if(d[i]==0)n++;if(n/(d.length/40)>.45){done=true;c.style.transition='opacity .8s';c.style.opacity=0;confetti()}}
+c.addEventListener('pointerdown',e=>{down=true;sp(e)});addEventListener('pointerup',()=>down=false);c.addEventListener('pointermove',e=>down&&sp(e));c.addEventListener('touchmove',e=>{e.preventDefault();sp(e)},{passive:false});
+function confetti(){const cv=document.getElementById('conf'),k=cv.getContext('2d');cv.width=innerWidth;cv.height=innerHeight;let p=[...Array(140)].map(()=>({x:Math.random()*cv.width,y:-Math.random()*cv.height,s:2+Math.random()*4,v:1+Math.random()*2,c:['#2f3b25','#b89a6a','#8e9a63'][Math.random()*3|0]}));let f=0;(function a(){k.clearRect(0,0,cv.width,cv.height);p.forEach(o=>{o.y+=o.v;o.x+=Math.sin((o.y+f)/30);k.fillStyle=o.c;k.beginPath();k.arc(o.x,o.y,o.s,0,7);k.fill()});if(++f<360)requestAnimationFrame(a);else k.clearRect(0,0,cv.width,cv.height)})()}
+// countdown
+const T=new Date('2026-11-30T10:30:00+05:00');setInterval(()=>{let s=Math.max(0,(T-Date.now())/1e3|0);d.textContent=s/86400|0;h.textContent=String((s%86400)/3600|0).padStart(2,'0');m.textContent=String((s%3600)/60|0).padStart(2,'0');document.getElementById('s').textContent=String(s%60).padStart(2,'0')},1000);
+</script></body></html>
