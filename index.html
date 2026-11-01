@@ -159,7 +159,7 @@ form{max-width:320px;margin:auto;text-align:left}form label{font-size:15px;displ
  <p class="msg" style="font-size:19px">Your love, blessings and presence are the greatest gift we could wish for.</p></section>
 
 <section class="sec"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><h3 class="script fade">RSVP</h3><div class="divider">♥</div>
- <form onsubmit="event.preventDefault();this.innerHTML='<p class=msg style=text-align:center>Thank you! ♥</p>'"><label>Your Name<input required></label><label>Email<input type="email"></label><label>Will you be attending?<select><option>Yes, I will be there</option><option>Sorry, can't make it</option></select></label><label>Your Message<textarea rows="3"></textarea></label><button class="btn">SEND RSVP</button></form></section>
+ <form id="rsvp"><label>Your Name<input name="name" required></label><label>Email<input name="email" type="email"></label><label>Will you be attending?<select name="attending"><option>Yes, I will be there</option><option>Sorry, can't make it</option></select></label><label>Number of people<input name="people" type="number" min="1" value="1" required></label><button class="btn">SEND RSVP</button></form></section>
 <p class="sec script" style="font-size:38px;padding-top:10px;padding-bottom:80px">Tehseen &amp; Mahrukh</p>
 </div>
 <script>
@@ -181,4 +181,11 @@ function check(){const d=x.getImageData(0,0,W,H).data;let k=0,t=0;for(let i=3;i<
 c.addEventListener('pointerdown',e=>{down=true;sp(e)});addEventListener('pointerup',()=>down=false);c.addEventListener('pointermove',e=>down&&sp(e));c.addEventListener('touchmove',e=>{e.preventDefault();sp(e)},{passive:false});
 function confetti(){const cv=document.getElementById('conf'),k=cv.getContext('2d');cv.width=innerWidth;cv.height=innerHeight;let p=[...Array(160)].map(()=>({x:Math.random()*cv.width,y:-Math.random()*cv.height,s:2+Math.random()*4,v:1+Math.random()*2.2,c:['#33402a','#b0905c','#8e9a63','#e8d7b0'][Math.random()*4|0]}));let f=0;(function a(){k.clearRect(0,0,cv.width,cv.height);p.forEach(o=>{o.y+=o.v;o.x+=Math.sin((o.y+f)/30)*.8;k.fillStyle=o.c;k.beginPath();k.arc(o.x,o.y,o.s,0,7);k.fill()});if(++f<380)requestAnimationFrame(a);else k.clearRect(0,0,cv.width,cv.height)})()}
 const T=new Date('2026-12-05T19:00:00+05:00');function tick(){let s=Math.max(0,(T-Date.now())/1e3|0);d.textContent=s/86400|0;h.textContent=String((s%86400)/3600|0).padStart(2,'0');m.textContent=String((s%3600)/60|0).padStart(2,'0');document.getElementById('s').textContent=String(s%60).padStart(2,'0')}tick();setInterval(tick,1000);
+const RSVP_ENDPOINT='';
+document.getElementById('rsvp').addEventListener('submit',async e=>{e.preventDefault();const f=e.target,b=f.querySelector('button');
+ const data={name:f.name.value.trim(),email:f.email.value.trim(),attending:f.attending.value,people:Math.max(1,parseInt(f.people.value)||1),timestamp:new Date().toISOString()};
+ b.disabled=true;b.textContent='SENDING…';
+ try{if(RSVP_ENDPOINT){const r=await fetch(RSVP_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});if(!r.ok)throw 0}
+  f.innerHTML='<p class=msg style=text-align:center>Thank you! ♥</p>'}
+ catch(_){b.disabled=false;b.textContent='SEND RSVP';alert('Could not send, please try again.')}});
 </script></body></html>
